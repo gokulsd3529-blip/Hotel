@@ -1,0 +1,348 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Namakkal Hotel</title>
+  <meta name="description" content="Namakkal Hotel — Comfortable stays, delicious food, and warm hospitality." />
+  <style>
+    /* Simple, modern responsive styling */
+    :root{
+      --brand:#0f6f61;
+      --muted:#6b7280;
+      --radius:12px;
+      --max:1100px;
+      --glass: rgba(255,255,255,0.06);
+      --card-shadow: 0 8px 24px rgba(15,15,15,0.08);
+      --accent:#f59e0b;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#f7fbfa 0%, #ffffff 100%);color:#0b1220;line-height:1.45}
+    .container{max-width:var(--max);margin:0 auto;padding:24px}/* NAV */
+header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.6);border-bottom:1px solid rgba(11,17,32,0.04)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700}
+.brand .logo{width:48px;height:48px;border-radius:8px;background:var(--brand);display:grid;place-items:center;color:white;font-size:18px}
+nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+nav a{text-decoration:none;color:inherit;font-weight:600}
+.cta{background:var(--brand);color:white;padding:10px 14px;border-radius:10px;text-decoration:none}
+.menu-btn{display:none;border:0;background:transparent;font-size:20px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), #fff);padding:28px;border-radius:16px;box-shadow:var(--card-shadow)}
+.hero h1{font-size:34px;margin:0 0 8px}
+.hero p{color:var(--muted);margin:0 0 18px}
+.features{display:flex;gap:12px;flex-wrap:wrap}
+.feature{background:var(--glass);padding:10px 12px;border-radius:10px;font-weight:600}
+
+/* Rooms grid */
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.room{background:white;border-radius:12px;overflow:hidden;box-shadow:var(--card-shadow);display:flex;flex-direction:column}
+.room img{width:100%;height:160px;object-fit:cover}
+.room .meta{padding:14px}
+.price{font-weight:800}
+
+/* Amenities */
+.amenities{display:flex;gap:18px;flex-wrap:wrap;margin:28px 0}
+.amenity{background:white;padding:14px;border-radius:10px;box-shadow:0 6px 18px rgba(12,17,24,0.06);min-width:150px;text-align:center}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+.gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+/* Booking form */
+.book{background:linear-gradient(180deg,#ffffff,#f8fffb);padding:20px;border-radius:12px;box-shadow:var(--card-shadow)}
+.row{display:flex;gap:8px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+input,select,button{padding:10px;border-radius:8px;border:1px solid rgba(11,17,32,0.06);font-size:15px}
+input:focus,select:focus{outline:2px solid rgba(15,111,97,0.12)}
+button.primary{background:var(--brand);color:white;border:0;padding:12px 14px;font-weight:700}
+
+/* Footer */
+footer{margin-top:34px;padding:28px 0;border-top:1px solid rgba(11,17,32,0.04);color:var(--muted)}
+
+/* Responsive */
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr}
+  .rooms{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){
+  .nav ul{display:none}
+  .menu-btn{display:block}
+  .rooms{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">NH</div>
+        <div>
+          <div style="font-size:16px">Namakkal Hotel</div>
+          <div style="font-size:12px;color:var(--muted)">Warm stays · Great food</div>
+        </div>
+      </div><nav>
+    <button class="menu-btn" id="menuToggle">☰</button>
+    <ul id="navList">
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#dine">Dining</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="cta" href="#book">Book</a></li>
+    </ul>
+  </nav>
+</div>
+
+  </header>  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Welcome to Namakkal Hotel</h1>
+        <p>Comfortable rooms, authentic local cuisine, and friendly service in the heart of Namakkal. Perfect for families, solo travellers and business stays.</p>
+        <div class="features">
+          <div class="feature">Free Wi‑Fi</div>
+          <div class="feature">24/7 Room Service</div>
+          <div class="feature">On‑site Restaurant</div>
+          <div class="feature">Meeting Rooms</div>
+        </div><div style="margin-top:18px;display:flex;gap:10px;align-items:center">
+      <a class="cta" href="#book">Reserve a Room</a>
+      <a href="#gallery" style="text-decoration:none;color:var(--muted);font-weight:700">Explore Gallery →</a>
+    </div>
+
+    <div style="margin-top:18px;color:var(--muted);font-size:13px">Special offer: Get 10% off on 2+ nights. Use code <strong>NAMAKKAL10</strong></div>
+  </div>
+
+  <aside class="book" id="book" aria-labelledby="book-heading">
+    <h3 id="book-heading">Quick booking</h3>
+    <form id="bookingForm">
+      <div style="margin-bottom:10px">
+        <label for="name">Full name</label>
+        <input id="name" name="name" placeholder="Your name" required />
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <div style="flex:1">
+          <label for="checkin">Check‑in</label>
+          <input type="date" id="checkin" name="checkin" required />
+        </div>
+        <div style="flex:1">
+          <label for="checkout">Check‑out</label>
+          <input type="date" id="checkout" name="checkout" required />
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:10px">
+        <div style="flex:1">
+          <label for="guests">Guests</label>
+          <select id="guests" name="guests"><option>1</option><option>2</option><option>3</option><option>4+</option></select>
+        </div>
+        <div style="flex:1">
+          <label for="room">Room type</label>
+          <select id="room" name="room"><option>Deluxe</option><option>Suite</option><option>Standard</option></select>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <button type="submit" class="primary">Request Booking</button>
+        <button type="button" id="callBtn">Call Us</button>
+      </div>
+      <div id="bookMsg" style="margin-top:10px;color:var(--muted);font-size:13px"></div>
+    </form>
+
+    <hr style="margin:18px 0;border:none;border-top:1px dashed rgba(11,17,32,0.06)" />
+    <div style="font-size:13px;color:var(--muted)"><strong>Address:</strong> Main Road, Namakkal<br/><strong>Phone:</strong> +91 98765 43210</div>
+  </aside>
+</section>
+
+<section id="rooms">
+  <h2 style="margin-top:6px">Rooms & Suites</h2>
+  <p style="color:var(--muted)">Choose from a variety of comfortable rooms designed for relaxation and convenience.</p>
+
+  <div class="rooms">
+    <article class="room">
+      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcd" alt="Deluxe room">
+      <div class="meta">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800">Deluxe Room</div>
+            <div style="color:var(--muted);font-size:13px">Queen bed · 1-2 guests</div>
+          </div>
+          <div class="price">₹2,499</div>
+        </div>
+        <p style="margin-top:10px;color:var(--muted);font-size:14px">Complimentary breakfast and free Wi‑Fi. Room service available.</p>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="primary" onclick="prefill('Deluxe Room')">Book</button>
+          <button onclick="openModal('Deluxe Room')">View</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="room">
+      <img src="https://images.unsplash.com/photo-1505691723518-36a6d3fa6a0b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=efgh" alt="Suite">
+      <div class="meta">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800">Executive Suite</div>
+            <div style="color:var(--muted);font-size:13px">King bed · 2-3 guests</div>
+          </div>
+          <div class="price">₹4,499</div>
+        </div>
+        <p style="margin-top:10px;color:var(--muted);font-size:14px">Spacious living area, minibar and premium amenities.</p>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="primary" onclick="prefill('Executive Suite')">Book</button>
+          <button onclick="openModal('Executive Suite')">View</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="room">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=ijkl" alt="Standard room">
+      <div class="meta">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:800">Standard Room</div>
+            <div style="color:var(--muted);font-size:13px">Twin/Double · 1-2 guests</div>
+          </div>
+          <div class="price">₹1,599</div>
+        </div>
+        <p style="margin-top:10px;color:var(--muted);font-size:14px">Clean and comfortable — great value for short stays.</p>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button class="primary" onclick="prefill('Standard Room')">Book</button>
+          <button onclick="openModal('Standard Room')">View</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="dine" style="margin-top:28px">
+  <h2>Dining</h2>
+  <p style="color:var(--muted)">Our on‑site restaurant serves authentic local dishes and international favourites — breakfast to dinner.</p>
+
+  <div class="amenities">
+    <div class="amenity">Restaurant & Cafe</div>
+    <div class="amenity">24/7 Room Service</div>
+    <div class="amenity">Banquet Hall</div>
+    <div class="amenity">Free Breakfast</div>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <img src="https://images.unsplash.com/photo-1541542684-5a4e0e43f0a8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=mnop" alt="restaurant">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=qrst" alt="dining">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=uvwx" alt="lobby">
+    <img src="https://images.unsplash.com/photo-1551882547-ffb3a2d2f9a1?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=yzab" alt="food">
+  </div>
+</section>
+
+<section id="contact" style="margin-top:28px">
+  <h2>Contact & Location</h2>
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px">
+    <div>
+      <p style="color:var(--muted)">Have questions or need group bookings? Reach out and we will be happy to assist.</p>
+      <p><strong>Phone:</strong> +91 98765 43210<br><strong>Email:</strong> stay@namakkalhotel.com</p>
+
+      <div style="background:#fff;padding:12px;border-radius:12px;box-shadow:var(--card-shadow);max-width:520px">
+        <strong>Opening hours</strong>
+        <ul style="margin-top:8px;color:var(--muted)">
+          <li>Reception: 24/7</li>
+          <li>Restaurant: 7:00 AM — 11:00 PM</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside style="background:#fff;border-radius:12px;padding:8px;box-shadow:var(--card-shadow)">
+      <iframe title="Namakkal location" src="https://www.google.com/maps?q=Namakkal&output=embed" style="width:100%;height:250px;border:0;border-radius:8px"></iframe>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+    <div>
+      <div style="font-weight:700">Namakkal Hotel</div>
+      <div style="color:var(--muted);font-size:13px">© Namakkal Hotel — All rights reserved</div>
+    </div>
+    <div style="color:var(--muted);font-size:13px">Designed with ♥ for Namakkal</div>
+  </div>
+</footer>
+
+  </main>  <!-- Simple modal & JS interactions -->  <div id="modal" style="display:none;position:fixed;inset:0;background:rgba(4,6,8,0.45);z-index:200;align-items:center;justify-content:center">
+    <div style="background:white;padding:18px;border-radius:12px;max-width:760px;width:92%;box-shadow:var(--card-shadow)">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="modalTitle">Room</h3>
+        <button onclick="closeModal()" style="background:transparent;border:0;font-size:20px">✕</button>
+      </div>
+      <div id="modalBody" style="color:var(--muted);margin-top:8px">Details about the selected room will appear here.</div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:flex-end">
+        <button onclick="closeModal()">Close</button>
+        <button class="primary" onclick="prefillFromModal()">Book this</button>
+      </div>
+    </div>
+  </div>  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navList = document.getElementById('navList');
+    menuToggle && menuToggle.addEventListener('click', ()=>{
+      if(navList.style.display === 'flex') navList.style.display = '';
+      else navList.style.display = 'flex';
+      navList.style.flexDirection = 'column';
+      navList.style.background = 'rgba(255,255,255,0.95)';
+      navList.style.padding = '12px';
+      navList.style.position = 'absolute';
+      navList.style.right = '24px';
+      navList.style.top = '64px';
+      navList.style.borderRadius = '12px';
+      navList.style.boxShadow = 'var(--card-shadow)';
+    });
+
+    // Simple booking form handling (demo: no server)
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const checkin = document.getElementById('checkin').value;
+      const checkout = document.getElementById('checkout').value;
+      if(!name || !checkin || !checkout){
+        showMsg('Please fill all required fields');
+        return;
+      }
+      // date sanity
+      if(new Date(checkout) <= new Date(checkin)){
+        showMsg('Check‑out date must be after check‑in');
+        return;
+      }
+      showMsg('Thanks ' + name + '! Your request has been received. We will contact you soon.');
+      bookingForm.reset();
+    });
+    function showMsg(m){document.getElementById('bookMsg').textContent = m}
+
+    // Prefill room type in booking
+    function prefill(type){
+      document.getElementById('room').value = type.includes('Deluxe') ? 'Deluxe' : (type.includes('Suite') ? 'Suite' : 'Standard');
+      window.scrollTo({top:0,behavior:'smooth'});
+      document.getElementById('name').focus();
+    }
+
+    // Modal
+    function openModal(name){
+      document.getElementById('modalTitle').textContent = name;
+      document.getElementById('modalBody').textContent = name + ' — A comfortable option with great amenities. Call +91 98765 43210 to know more.';
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal(){document.getElementById('modal').style.display = 'none'}
+    function prefillFromModal(){
+      const t = document.getElementById('modalTitle').textContent;
+      prefill(t);
+      closeModal();
+    }
+
+    // Call button
+    document.getElementById('callBtn').addEventListener('click', ()=>{
+      window.location.href = 'tel:+919876543210';
+    });
+  </script></body>
+</html>
